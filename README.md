@@ -19,10 +19,14 @@ Policies (trained models), printable parts, tools and guides for [XGO-Duck](http
 
 ## Official
 
+- **[XGO-Duck official page](https://www.xgorobot.com/duck.html)** — Luwu Dynamics' purchase page, and the one place that gathers everything (in Chinese):
+  - the electronics kit (sold in batches, shipped once a week) and the notes to read before buying;
+  - downloads of **Duck Setup**, the one-click flashing tool (see [Tools](#tools));
+  - a step-by-step guide: opening the console, servo setup, calibration, walking;
+  - the promo video, an FAQ, and links to the three repositories;
+  - **the WeChat group.** *入群咨询交流* shows the QR code of the official WeCom (企业微信) group, where Luwu takes questions before you buy, usage problems and technical discussion. The official WeChat account on the page only handles payment and shipping. If adding it fails, join the group first and add “陆吾智能LuwuDynamics” from there.
 - [xgoduck_hardware](https://github.com/LuwuDynamics/xgoduck_hardware) — printable structure (STL), expansion board, BOM. The maintainer marks this hardware revision as for learning and testing only.
   - [Assembly guide (PDF)](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/Assembly_Guide.pdf) · [Printing](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/PRINTING.md) · [Build guide](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/BUILD_GUIDE.md) · [FAQ](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/FAQ.md) · [Troubleshooting](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/TROUBLESHOOTING.md)
-- [XGO-Duck product page](https://www.xgorobot.com/duck.html) — Luwu Dynamics' site, in Chinese: the electronics kit, and downloads of **Duck Setup**, their desktop setup tool for macOS, Windows and Linux.
-  - **Join the WeChat group.** On the product page, *入群咨询交流* shows the QR code of the official WeCom (企业微信) group, where Luwu takes questions before you buy, usage problems and technical discussion. The official WeChat account there only handles payment and shipping. If adding it fails, join the group first and add “陆吾智能LuwuDynamics” from there.
 - [XGO-Duck on MakerWorld](https://makerworld.com.cn/zh/models/3098881-xgo-duck-da-zao-shu-yu-ni-de-shuang-zu-ji-qi-ya) — Luwu Dynamics' own page, in Chinese: print profiles, hardware list, servo specifications, build steps.
 - [xgoduck_runtime_arduino](https://github.com/LuwuDynamics/xgoduck_runtime_arduino) — the Arduino App that runs on the robot: ONNX policies at 50 Hz on Linux, the STM32 drives the servos and the IMU at 100 Hz, web console on port 9527.
 - [xgoduck_rl](https://github.com/LuwuDynamics/xgoduck_rl) — training environments (mjlab, PPO) and ONNX export.
@@ -77,6 +81,13 @@ Trained one? See [publishing a policy](policies/README.md).
 
 ## Tools
 
+- **Duck Setup** (official) — Luwu Dynamics' one-click flashing tool, from the [official page](https://www.xgorobot.com/duck.html). Latest versions, ZIP, 140–180 MB:
+  - [Windows x64](https://downloads.xgorobot.com/xgoduck/duck-setup-latest-win32-x64.zip)
+  - [macOS Apple silicon](https://downloads.xgorobot.com/xgoduck/duck-setup-latest-darwin-arm64.zip) · [macOS Intel](https://downloads.xgorobot.com/xgoduck/duck-setup-latest-darwin-x64.zip)
+  - [Linux x64](https://downloads.xgorobot.com/xgoduck/duck-setup-latest-linux-x64.zip) · [Linux ARM64](https://downloads.xgorobot.com/xgoduck/duck-setup-latest-linux-arm64.zip)
+  - [Older versions and checksums](https://downloads.xgorobot.com/xgoduck/)
+
+  The official page also offers an unofficial, community-modified App Lab for Windows.
 - [Quay](https://github.com/caoxg/quay) (unofficial) — desktop app and CLI for UNO Q apps: install and update the runtime from git while keeping its `data/`, one-click policies from this list, China mirrors, and system updates without App Lab.
 
 ## Training
