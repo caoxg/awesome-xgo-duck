@@ -20,6 +20,7 @@ Policies (trained models), printable parts, tools and guides for [XGO-Duck](http
 
 - [xgoduck_hardware](https://github.com/LuwuDynamics/xgoduck_hardware) — printable structure (STL), expansion board, BOM. The maintainer marks this hardware revision as for learning and testing only.
   - [Assembly guide (PDF)](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/Assembly_Guide.pdf) · [Printing](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/PRINTING.md) · [Build guide](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/BUILD_GUIDE.md) · [FAQ](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/FAQ.md) · [Troubleshooting](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/TROUBLESHOOTING.md)
+- [XGO-Duck on MakerWorld](https://makerworld.com.cn/zh/models/3098881-xgo-duck-da-zao-shu-yu-ni-de-shuang-zu-ji-qi-ya) — Luwu Dynamics' own page, in Chinese: print profiles, hardware list, servo specifications, build steps.
 - [xgoduck_runtime_arduino](https://github.com/LuwuDynamics/xgoduck_runtime_arduino) — the Arduino App that runs on the robot: ONNX policies at 50 Hz on Linux, the STM32 drives the servos and the IMU at 100 Hz, web console on port 9527.
 - [xgoduck_rl](https://github.com/LuwuDynamics/xgoduck_rl) — training environments (mjlab, PPO) and ONNX export.
 - [Discord](https://discord.com/invite/pfWrJeJRh6) — the community server linked from the official README.
@@ -48,7 +49,7 @@ Quay checks the SHA-256 and that the model fits the slot (input `[1,61]`, output
 | Slot | File in `python/` | Used for |
 | --- | --- | --- |
 | `walk` | `xgoduck_walk.onnx` | walking (the default) and the recovery walk |
-| `roller` | `xgoduck_roller.onnx` | Roller mode. Its home pose comes from the model's `default_joint_pos` |
+| `roller` | `xgoduck_roller.onnx` | Roller mode, with the roller kit fitted ([3D printing](#3d-printing)). Its home pose comes from the model's `default_joint_pos` |
 | `getup` | `xgoduck_getup.onnx` | getting up after a fall |
 | `pick` | `xgoduck_pick.onnx` | the 4 s pick move |
 | `roulade` | `xgoduck_roulade.onnx` | the 1.9 s roulade |
@@ -57,11 +58,19 @@ Trained one? See [publishing a policy](policies/README.md).
 
 ## 3D printing
 
-- [Official STL files](https://github.com/LuwuDynamics/xgoduck_hardware/tree/HEAD/structure) and [printing notes](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/PRINTING.md) (TPU feet, orientation, material).
+- [Official print profiles on MakerWorld](https://makerworld.com.cn/zh/models/3098881-xgo-duck-da-zao-shu-yu-ni-de-shuang-zu-ji-qi-ya), by Luwu Dynamics:
+  - the whole robot: 6 plates, about 16 h, or 4 plates on H2 printers;
+  - the **roller kit** that *Roller mode* needs: 1 plate, about 1.5 h.
+
+  Follow the page's orientation note: parts lie flat with their grooves open upward, 4 walls, 13 % gyroid infill. It is under the MakerWorld Exclusive License: remixes may be published only on MakerWorld, crediting Luwu Dynamics, and not used commercially.
+- [Official STL files](https://github.com/LuwuDynamics/xgoduck_hardware/tree/HEAD/structure) and [printing notes](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/PRINTING.md) on GitHub (TPU feet, orientation, material).
 - **Calibration** (setting each servo's center):
   - [xgoduck中位校准托盘](https://makerworld.com.cn/zh/models/3136258-xgoduckzhong-wei-xiao-zhun-tuo-pan) (center calibration tray) by 星猫, on MakerWorld. With torque off, lay the duck on its back in the tray, with the head, body and both feet in their seats. It then holds the center pose while you press *Set center & hold* for each joint. Take the duck out before motion tests. Print in PETG; it needs a bed of about 244 × 244 mm, so the A1 mini is too small. CC BY-NC-SA 4.0.
   - The center is the pose the policies call 0° for every joint: legs straight down with the feet flat and pointing forward, the neck upright, the head level and facing forward, the beak closed. An offset here shows up as a lean in *Default pose*.
-- **Print profiles and remixes:** link to where you publish them (MakerWorld, Printables, your own repository) and state the license. The official design files have no license yet ([LICENSING.md](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/LICENSING.md)), so share a derivative only with the maintainer's permission.
+- **Print profiles and remixes:** link to where you publish them and state the license.
+  - A remix of the official parts goes on MakerWorld, because the official page's license allows derivatives only there.
+  - The GitHub files have no license yet ([LICENSING.md](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/LICENSING.md)).
+  - Your own designs, such as the calibration tray above, carry whatever license you choose.
 
 ## Tools
 

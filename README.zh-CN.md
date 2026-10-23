@@ -20,6 +20,7 @@
 
 - [xgoduck_hardware](https://github.com/LuwuDynamics/xgoduck_hardware)：可打印结构（STL）、扩展板、物料清单。维护者说明这一版硬件仅用于学习和测试。
   - [装配指南（PDF）](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/Assembly_Guide.pdf) · [打印](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/PRINTING.md) · [制作指南](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/BUILD_GUIDE.md) · [常见问题](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/FAQ.md) · [故障排查](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/TROUBLESHOOTING.md)
+- [MakerWorld 上的 XGO-Duck](https://makerworld.com.cn/zh/models/3098881-xgo-duck-da-zao-shu-yu-ni-de-shuang-zu-ji-qi-ya)：陆吾智能官方页面，有打印配置、物料清单、舵机参数和制作步骤。
 - [xgoduck_runtime_arduino](https://github.com/LuwuDynamics/xgoduck_runtime_arduino)：在机器人上运行的 Arduino App。Linux 以 50 Hz 运行 ONNX 策略，STM32 以 100 Hz 驱动舵机和 IMU，网页控制台在 9527 端口。
 - [xgoduck_rl](https://github.com/LuwuDynamics/xgoduck_rl)：训练环境（mjlab、PPO）和 ONNX 导出。
 - [Discord](https://discord.com/invite/pfWrJeJRh6)：官方 README 里给出的社区服务器。
@@ -61,7 +62,7 @@ Quay 会做这些事：
 | 插槽 | `python/` 里的文件 | 用途 |
 | --- | --- | --- |
 | `walk` | `xgoduck_walk.onnx` | 行走（默认），也用于摔倒恢复后的行走 |
-| `roller` | `xgoduck_roller.onnx` | 轮滑模式；初始姿态取自模型的 `default_joint_pos` |
+| `roller` | `xgoduck_roller.onnx` | 轮滑模式，需要装上轮滑套件（见 [3D 打印](#3d-打印)）；初始姿态取自模型的 `default_joint_pos` |
 | `getup` | `xgoduck_getup.onnx` | 摔倒后起身 |
 | `pick` | `xgoduck_pick.onnx` | 4 秒的啄食动作 |
 | `roulade` | `xgoduck_roulade.onnx` | 1.9 秒的翻滚 |
@@ -70,14 +71,22 @@ Quay 会做这些事：
 
 ## 3D 打印
 
-- [官方 STL 文件](https://github.com/LuwuDynamics/xgoduck_hardware/tree/HEAD/structure)和[打印说明](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/PRINTING.md)（TPU 脚底、摆放方向、材料）。
+- [MakerWorld 官方打印配置](https://makerworld.com.cn/zh/models/3098881-xgo-duck-da-zao-shu-yu-ni-de-shuang-zu-ji-qi-ya)，陆吾智能发布：
+  - 整机：6 盘，约 16 小时；H2 系列打印机是 4 盘；
+  - **轮滑套件**（轮滑模式要用）：1 盘，约 1.5 小时。
+
+  请按页面要求摆放：零件平躺、凹槽朝上，4 层墙、13% 螺旋填充。许可是 MakerWorld 独家许可：改版只能发在 MakerWorld，要注明陆吾智能，不能商用。
+- GitHub 上的[官方 STL 文件](https://github.com/LuwuDynamics/xgoduck_hardware/tree/HEAD/structure)和[打印说明](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/PRINTING.md)（TPU 脚底、摆放方向、材料）。
 - **标定（舵机中位校准）：**
   - [xgoduck中位校准托盘](https://makerworld.com.cn/zh/models/3136258-xgoduckzhong-wei-xiao-zhun-tuo-pan)，作者「星猫」，发布在 MakerWorld。
     - 用法：鸭子卸力后，背朝下放进托盘，头、身体和双脚都对准托座，托盘会把它固定在中位姿态，再逐个关节点「Set center & hold」。做动作测试前先取出来。
     - 打印：PETG，需要约 244 × 244 mm 的打印平台，A1 mini 放不下。
     - 许可：CC BY-NC-SA 4.0。
   - 中位就是策略里每个关节 0° 时的姿态：腿竖直向下，脚放平、脚尖朝前，脖子竖直，头平视前方，嘴闭合。中位偏了，在 Default pose 里就会表现为身体前倾或后仰。
-- **切片配置和改版：** 请链接到你发布的地方（MakerWorld、Printables 或你自己的仓库），并写明许可。官方设计文件目前还没有许可证（见 [LICENSING.md](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/LICENSING.md)），发布衍生设计前请先取得维护者许可。
+- **切片配置和改版：** 请链接到你发布的地方，并写明许可。
+  - 官方零件的改版请发在 MakerWorld，因为官方页面的许可只允许在那里发布衍生作品；
+  - GitHub 上的文件目前还没有许可证（见 [LICENSING.md](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/LICENSING.md)）；
+  - 你自己的设计（比如上面的标定托盘）用什么许可由你决定。
 
 ## 工具
 
