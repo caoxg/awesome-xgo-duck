@@ -12,6 +12,7 @@ Policies (trained models), printable parts, tools and guides for [XGO-Duck](http
 - [3D printing](#3d-printing)
 - [Tools](#tools)
 - [Training](#training)
+- [Videos](#videos)
 - [Upstream and credits](#upstream-and-credits)
 - [Contributing](#contributing)
 - [About this list](#about-this-list)
@@ -82,6 +83,29 @@ Trained one? See [publishing a policy](policies/README.md).
 - [xgoduck_rl](https://github.com/LuwuDynamics/xgoduck_rl): `uv run list-envs` lists the tasks, e.g. `Mjlab-Velocity-Flat-XgoDuck` and `Mjlab-Velocity-Swizzle-XgoDuck` (the roller walk). It needs a CUDA GPU.
 - Before you share an export, `quay policy inspect model.onnx --app xgoduck` shows its shapes and metadata and prints an index entry.
 
+## Videos
+
+### Bilibili
+
+- [XGO-Duck 组装教程｜一只机器鸭的诞生](https://www.bilibili.com/video/BV1h1Ww6XE3m/) — Luwu Dynamics (official), 23 min. The whole assembly, in Chinese.
+- [陆吾智能联合飞特舵机推出全新开源项目 XGO-Duck](https://www.bilibili.com/video/BV15Ta562E5e/) — Feetech's servo factory, 1 min. Walking, getting up, picking with the beak.
+
+### YouTube
+
+- [How to Build XGO-Duck | Robot Assembly Tutorial](https://www.youtube.com/watch?v=nElGguHO5dY) — CyberBionic Maker, Luwu Dynamics' channel.
+- [Meet XGO-Duck | A Robot You Can Build, Code & Explore](https://www.youtube.com/watch?v=tiDCkt-TwWM) — CyberBionic Maker.
+- [XGO-Duck刚刚开源！Microduck最有力平替](https://www.youtube.com/watch?v=zWF2MOS6fJM) — 轻松易学嵌入式. An introduction in Chinese.
+- [xgo duck unified demo](https://www.youtube.com/watch?v=-6R_79_7PM0) — Jairo Bambang Oetomo. A builder's demo.
+
+### Xiaohongshu (小红书)
+
+Nothing listed yet. Send the link to your note (`xhslink.com/…` or `xiaohongshu.com/explore/…`).
+
+### Upstream: Microduck
+
+- [Meet Microduck](https://www.youtube.com/watch?v=reiTh7K4KSc) and [Microduck Sim 2 Real](https://www.youtube.com/watch?v=szW7N_7B3tU) — Pollen Robotics. The robot XGO-Duck adapts, and how its policies move from simulation to the real robot.
+- [Getting Started Training a Walking RL PPO Policy with Mjlab](https://www.youtube.com/watch?v=ZDvCdIFXANw) — Kevin Wood. Training with mjlab, the framework xgoduck_rl uses.
+
 ## Upstream and credits
 
 XGO-Duck is Luwu Dynamics' adaptation of [Microduck](https://pollen-robotics.com/microduck/) by Pollen Robotics ([runtime](https://github.com/pollen-robotics/microduck), [microduck_rl](https://github.com/pollen-robotics/microduck_rl)). Training uses [mjlab](https://github.com/mujocolab/mjlab), and actuator models come from [BAM](https://github.com/Rhoban/bam) by Rhoban. See the official [origins page](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/UPSTREAM.md).
@@ -90,7 +114,7 @@ XGO-Duck is Luwu Dynamics' adaptation of [Microduck](https://pollen-robotics.com
 
 Pull requests are welcome. One addition per pull request, please.
 
-- **A link** (print profile, video, article, tool): add it to both `README.md` and `README.zh-CN.md`, with a one-line description.
+- **A link** (print profile, video, article, tool): add it to both `README.md` and `README.zh-CN.md`, with a one-line description. A video goes under its platform, with its title as published and the channel.
 - **A policy:** follow [policies/README.md](policies/README.md), then run `uv run tools/index.py check`. The check also runs on every pull request.
 - Share only material you have the right to share, and say under which license. This repository holds no model or design files, only links.
 

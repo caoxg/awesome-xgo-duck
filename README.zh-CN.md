@@ -12,6 +12,7 @@
 - [3D 打印](#3d-打印)
 - [工具](#工具)
 - [训练](#训练)
+- [视频](#视频)
 - [上游与致谢](#上游与致谢)
 - [参与贡献](#参与贡献)
 - [关于这份合集](#关于这份合集)
@@ -102,6 +103,29 @@ Quay 会做这些事：
 - [xgoduck_rl](https://github.com/LuwuDynamics/xgoduck_rl)：`uv run list-envs` 会列出所有任务，例如 `Mjlab-Velocity-Flat-XgoDuck` 和 `Mjlab-Velocity-Swizzle-XgoDuck`（轮滑）。训练需要 CUDA 显卡。
 - 分享导出的模型前，运行 `quay policy inspect model.onnx --app xgoduck`，可以查看形状和元数据，并生成一条索引条目。
 
+## 视频
+
+### 哔哩哔哩
+
+- [XGO-Duck 组装教程｜一只机器鸭的诞生](https://www.bilibili.com/video/BV1h1Ww6XE3m/)：陆吾智能官方，23 分钟，完整组装过程。
+- [陆吾智能联合飞特舵机推出全新开源项目 XGO-Duck](https://www.bilibili.com/video/BV15Ta562E5e/)：飞特舵机工厂，1 分钟，演示行走、跌倒起身、用鸭嘴夹东西。
+
+### YouTube
+
+- [How to Build XGO-Duck | Robot Assembly Tutorial](https://www.youtube.com/watch?v=nElGguHO5dY)：CyberBionic Maker，陆吾智能的频道。
+- [Meet XGO-Duck | A Robot You Can Build, Code & Explore](https://www.youtube.com/watch?v=tiDCkt-TwWM)：CyberBionic Maker。
+- [XGO-Duck刚刚开源！Microduck最有力平替](https://www.youtube.com/watch?v=zWF2MOS6fJM)：轻松易学嵌入式，中文介绍。
+- [xgo duck unified demo](https://www.youtube.com/watch?v=-6R_79_7PM0)：Jairo Bambang Oetomo，玩家实机演示。
+
+### 小红书
+
+还没有收录。欢迎发来你的笔记链接（`xhslink.com/…` 或 `xiaohongshu.com/explore/…`）。
+
+### 上游：Microduck
+
+- [Meet Microduck](https://www.youtube.com/watch?v=reiTh7K4KSc) 和 [Microduck Sim 2 Real](https://www.youtube.com/watch?v=szW7N_7B3tU)：Pollen Robotics 官方。XGO-Duck 改编自这只机器人；第二个视频讲策略怎样从仿真迁移到真机。
+- [Getting Started Training a Walking RL PPO Policy with Mjlab](https://www.youtube.com/watch?v=ZDvCdIFXANw)：Kevin Wood。用 mjlab 训练行走策略，xgoduck_rl 用的就是这个框架。
+
 ## 上游与致谢
 
 XGO-Duck 是陆吾智能基于 Pollen Robotics 的 [Microduck](https://pollen-robotics.com/microduck/)（[运行时](https://github.com/pollen-robotics/microduck)、[microduck_rl](https://github.com/pollen-robotics/microduck_rl)）做的适配。训练使用 [mjlab](https://github.com/mujocolab/mjlab)，执行器模型来自 Rhoban 的 [BAM](https://github.com/Rhoban/bam)。详见官方的[来源说明](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/UPSTREAM.md)。
@@ -110,7 +134,7 @@ XGO-Duck 是陆吾智能基于 Pollen Robotics 的 [Microduck](https://pollen-ro
 
 欢迎提 Pull Request，每个 PR 请只加一项。
 
-- **加链接**（切片配置、视频、文章、工具）：同时加到 `README.md` 和 `README.zh-CN.md`，各附一句说明。
+- **加链接**（切片配置、视频、文章、工具）：同时加到 `README.md` 和 `README.zh-CN.md`，各附一句说明。视频放在对应平台下面，写上原标题和作者。
 - **加策略**：按 [policies/README.md](policies/README.md) 操作，然后运行 `uv run tools/index.py check`。每个 PR 也会自动跑这项检查。
 - 只分享你有权分享的内容，并写明许可。这个仓库只放链接，不存放模型或设计文件。
 
