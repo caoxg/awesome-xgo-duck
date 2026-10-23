@@ -10,7 +10,6 @@ Policies (trained models), printable parts, tools and guides for [XGO-Duck](http
 - [Official](#official)
 - [Policies](#policies)
 - [3D printing](#3d-printing)
-- [Build tips](#build-tips)
 - [Tools](#tools)
 - [Training](#training)
 - [Videos](#videos)
@@ -75,14 +74,6 @@ Trained one? See [publishing a policy](policies/README.md).
   - A remix of the official parts goes on MakerWorld, because the official page's license allows derivatives only there.
   - The GitHub files have no license yet ([LICENSING.md](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/LICENSING.md)).
   - Your own designs, such as the calibration tray above, carry whatever license you choose.
-
-## Build tips
-
-Things builders found easier than the official steps. Credit goes to whoever shared them.
-
-- **Head wiring** (by @Dong, from the user group): when you fit the head, route the head servo's cable from its connector over the top edge of the white servo cover, down its right side, and out at the bottom of the frame to the connector of the servo below. The cable then runs along the cover's edge instead of over the servo horn.
-
-  <img src="tips/head-wiring-1.jpg" alt="Head assembly from above, with the cable route drawn in red" width="380"> <img src="tips/head-wiring-2.jpg" alt="The head with the cable routed over the top of the servo cover and down to the servo below" width="260">
 
 ## Tools
 
