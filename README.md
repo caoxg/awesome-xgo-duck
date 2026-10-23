@@ -20,6 +20,7 @@ Policies (trained models), printable parts, tools and guides for [XGO-Duck](http
 
 - [xgoduck_hardware](https://github.com/LuwuDynamics/xgoduck_hardware) — printable structure (STL), expansion board, BOM. The maintainer marks this hardware revision as for learning and testing only.
   - [Assembly guide (PDF)](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/Assembly_Guide.pdf) · [Printing](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/PRINTING.md) · [Build guide](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/BUILD_GUIDE.md) · [FAQ](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/FAQ.md) · [Troubleshooting](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/TROUBLESHOOTING.md)
+- [XGO-Duck product page](https://www.xgorobot.com/duck.html) — Luwu Dynamics' site, in Chinese: the electronics kit, and downloads of **Duck Setup**, their desktop setup tool for macOS, Windows and Linux.
 - [XGO-Duck on MakerWorld](https://makerworld.com.cn/zh/models/3098881-xgo-duck-da-zao-shu-yu-ni-de-shuang-zu-ji-qi-ya) — Luwu Dynamics' own page, in Chinese: print profiles, hardware list, servo specifications, build steps.
 - [xgoduck_runtime_arduino](https://github.com/LuwuDynamics/xgoduck_runtime_arduino) — the Arduino App that runs on the robot: ONNX policies at 50 Hz on Linux, the STM32 drives the servos and the IMU at 100 Hz, web console on port 9527.
 - [xgoduck_rl](https://github.com/LuwuDynamics/xgoduck_rl) — training environments (mjlab, PPO) and ONNX export.
