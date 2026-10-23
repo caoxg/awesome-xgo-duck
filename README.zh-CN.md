@@ -10,6 +10,7 @@
 - [官方](#官方)
 - [策略](#策略)
 - [3D 打印](#3d-打印)
+- [组装技巧](#组装技巧)
 - [工具](#工具)
 - [训练](#训练)
 - [视频](#视频)
@@ -22,6 +23,7 @@
 - [xgoduck_hardware](https://github.com/LuwuDynamics/xgoduck_hardware)：可打印结构（STL）、扩展板、物料清单。维护者说明这一版硬件仅用于学习和测试。
   - [装配指南（PDF）](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/Assembly_Guide.pdf) · [打印](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/PRINTING.md) · [制作指南](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/BUILD_GUIDE.md) · [常见问题](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/FAQ.md) · [故障排查](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/TROUBLESHOOTING.md)
 - [XGO-Duck 产品页](https://www.xgorobot.com/duck.html)：陆吾智能官网，可以买电子套件，也可以下载官方桌面配置工具 **Duck Setup**（macOS、Windows、Linux）。
+  - **记得加微信群。** 在购买页点「入群咨询交流」，会弹出官方企业微信交流群的二维码。购前咨询、使用问题和技术交流都在这个群里。页面上另有一个官方微信，只负责收款和发货，不做咨询；加不上的话，先进企业微信群，再在群里加「陆吾智能LuwuDynamics」。
 - [MakerWorld 上的 XGO-Duck](https://makerworld.com.cn/zh/models/3098881-xgo-duck-da-zao-shu-yu-ni-de-shuang-zu-ji-qi-ya)：陆吾智能官方页面，有打印配置、物料清单、舵机参数和制作步骤。
 - [xgoduck_runtime_arduino](https://github.com/LuwuDynamics/xgoduck_runtime_arduino)：在机器人上运行的 Arduino App。Linux 以 50 Hz 运行 ONNX 策略，STM32 以 100 Hz 驱动舵机和 IMU，网页控制台在 9527 端口。
 - [xgoduck_rl](https://github.com/LuwuDynamics/xgoduck_rl)：训练环境（mjlab、PPO）和 ONNX 导出。
@@ -89,6 +91,14 @@ Quay 会做这些事：
   - 官方零件的改版请发在 MakerWorld，因为官方页面的许可只允许在那里发布衍生作品；
   - GitHub 上的文件目前还没有许可证（见 [LICENSING.md](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/LICENSING.md)）；
   - 你自己的设计（比如上面的标定托盘）用什么许可由你决定。
+
+## 组装技巧
+
+大家在组装中发现的、比官方步骤更顺手的做法，署名归分享者。
+
+- **头部走线**（@Dong，来自用户群）：安装头部时，头部舵机的线从插口引出后，沿白色舵机盖板的上沿绕到右侧，顺着右侧往下，从框架底部出来，插到下面那个舵机的插口上。这样线贴着盖板边缘走，不会压在舵盘上。
+
+  <img src="tips/head-wiring-1.jpg" alt="从上方看头部组件，红线标出走线路径" width="380"> <img src="tips/head-wiring-2.jpg" alt="线从舵机盖板上沿绕过，再向下接到下面的舵机" width="260">
 
 ## 工具
 

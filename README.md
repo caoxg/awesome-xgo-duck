@@ -10,6 +10,7 @@ Policies (trained models), printable parts, tools and guides for [XGO-Duck](http
 - [Official](#official)
 - [Policies](#policies)
 - [3D printing](#3d-printing)
+- [Build tips](#build-tips)
 - [Tools](#tools)
 - [Training](#training)
 - [Videos](#videos)
@@ -22,6 +23,7 @@ Policies (trained models), printable parts, tools and guides for [XGO-Duck](http
 - [xgoduck_hardware](https://github.com/LuwuDynamics/xgoduck_hardware) — printable structure (STL), expansion board, BOM. The maintainer marks this hardware revision as for learning and testing only.
   - [Assembly guide (PDF)](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/Assembly_Guide.pdf) · [Printing](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/PRINTING.md) · [Build guide](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/BUILD_GUIDE.md) · [FAQ](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/FAQ.md) · [Troubleshooting](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/TROUBLESHOOTING.md)
 - [XGO-Duck product page](https://www.xgorobot.com/duck.html) — Luwu Dynamics' site, in Chinese: the electronics kit, and downloads of **Duck Setup**, their desktop setup tool for macOS, Windows and Linux.
+  - **Join the WeChat group.** On the product page, *入群咨询交流* shows the QR code of the official WeCom (企业微信) group, where Luwu takes questions before you buy, usage problems and technical discussion. The official WeChat account there only handles payment and shipping. If adding it fails, join the group first and add “陆吾智能LuwuDynamics” from there.
 - [XGO-Duck on MakerWorld](https://makerworld.com.cn/zh/models/3098881-xgo-duck-da-zao-shu-yu-ni-de-shuang-zu-ji-qi-ya) — Luwu Dynamics' own page, in Chinese: print profiles, hardware list, servo specifications, build steps.
 - [xgoduck_runtime_arduino](https://github.com/LuwuDynamics/xgoduck_runtime_arduino) — the Arduino App that runs on the robot: ONNX policies at 50 Hz on Linux, the STM32 drives the servos and the IMU at 100 Hz, web console on port 9527.
 - [xgoduck_rl](https://github.com/LuwuDynamics/xgoduck_rl) — training environments (mjlab, PPO) and ONNX export.
@@ -73,6 +75,14 @@ Trained one? See [publishing a policy](policies/README.md).
   - A remix of the official parts goes on MakerWorld, because the official page's license allows derivatives only there.
   - The GitHub files have no license yet ([LICENSING.md](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/LICENSING.md)).
   - Your own designs, such as the calibration tray above, carry whatever license you choose.
+
+## Build tips
+
+Things builders found easier than the official steps. Credit goes to whoever shared them.
+
+- **Head wiring** (by @Dong, from the user group): when you fit the head, route the head servo's cable from its connector over the top edge of the white servo cover, down its right side, and out at the bottom of the frame to the connector of the servo below. The cable then runs along the cover's edge instead of over the servo horn.
+
+  <img src="tips/head-wiring-1.jpg" alt="Head assembly from above, with the cable route drawn in red" width="380"> <img src="tips/head-wiring-2.jpg" alt="The head with the cable routed over the top of the servo cover and down to the servo below" width="260">
 
 ## Tools
 
