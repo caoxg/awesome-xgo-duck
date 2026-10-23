@@ -1,0 +1,50 @@
+# XGO-Duck policy index (unofficial, community-maintained).
+#
+# Each entry points to an ONNX policy hosted by its author (a GitHub release, the author's own
+# repository, …). This repository only lists them. Quay (https://github.com/caoxg/quay) reads this
+# file to offer one-click installs; anyone can also download a file and copy it into the runtime's
+# python/ folder by hand.
+#
+# Format: see policies/README.md. Check your change with:  uv run tools/index.py check
+version: 1
+name: Awesome XGO-Duck policies (unofficial)
+policies:
+  - id: walk-luwu-2026-09-22
+    app: xgoduck
+    slot: walk
+    name: Walk · runtime of 2026-09-22
+    name_zh: 行走 · 2026-09-22 版运行时
+    author: Luwu Dynamics
+    description: >-
+      The walking model the official runtime shipped from its first release until 2026-10-22.
+      Listed so you can go back to it; the runtime has since moved to a newer walk.
+    description_zh: 官方运行时从首个版本到 2026-10-22 之前自带的行走模型。收录在这里，方便需要时换回；运行时之后已经换了新的行走模型。
+    url: https://raw.githubusercontent.com/LuwuDynamics/xgoduck_runtime_arduino/5f1954aff0df12733b69bc8405fac177a4cd9c60/python/xgoduck_walk.onnx
+    mirrors:
+      - https://cdn.jsdelivr.net/gh/LuwuDynamics/xgoduck_runtime_arduino@5f1954aff0df12733b69bc8405fac177a4cd9c60/python/xgoduck_walk.onnx
+    sha256: 5727b909d5ea1a0f9ff63bf4cea9707339dea6a522374c7a120da633605b923f
+    size: 793706
+    license: unspecified (no license file in the source repository)
+    trainer: LuwuDynamics/xgoduck_rl (revision not recorded)
+    homepage: https://github.com/LuwuDynamics/xgoduck_runtime_arduino/tree/5f1954aff0df12733b69bc8405fac177a4cd9c60
+    created: 2026-09-22
+
+  - id: walk-luwu-2026-10-22
+    app: xgoduck
+    slot: walk
+    name: Walk · runtime of 2026-10-22
+    name_zh: 行走 · 2026-10-22 版运行时
+    author: Luwu Dynamics
+    description: >-
+      The "updated walking policy" of runtime 466512e, still the stock walk as of 2026-10-23.
+      Listed so you can pin it if a later runtime changes the walk.
+    description_zh: 运行时 466512e 更新的行走模型，截至 2026-10-23 仍是原版自带的行走模型。收录在这里，以后运行时换了行走模型也可以固定用这一版。
+    url: https://raw.githubusercontent.com/LuwuDynamics/xgoduck_runtime_arduino/466512e9426f61fb07d9be9b3f20df0171692150/python/xgoduck_walk.onnx
+    mirrors:
+      - https://cdn.jsdelivr.net/gh/LuwuDynamics/xgoduck_runtime_arduino@466512e9426f61fb07d9be9b3f20df0171692150/python/xgoduck_walk.onnx
+    sha256: 57cdebf36e7fa23116270dec96f013a6a64511f37311d322443f5297bdc3d6db
+    size: 793706
+    license: unspecified (no license file in the source repository)
+    trainer: LuwuDynamics/xgoduck_rl (revision not recorded)
+    homepage: https://github.com/LuwuDynamics/xgoduck_runtime_arduino/tree/466512e9426f61fb07d9be9b3f20df0171692150
+    created: 2026-10-22
