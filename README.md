@@ -58,6 +58,9 @@ Trained one? See [publishing a policy](policies/README.md).
 ## 3D printing
 
 - [Official STL files](https://github.com/LuwuDynamics/xgoduck_hardware/tree/HEAD/structure) and [printing notes](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/PRINTING.md) (TPU feet, orientation, material).
+- **Calibration** (setting each servo's center):
+  - [xgoduck中位校准托盘](https://makerworld.com.cn/zh/models/3136258-xgoduckzhong-wei-xiao-zhun-tuo-pan) (center calibration tray) by 星猫, on MakerWorld. With torque off, lay the duck on its back in the tray, with the head, body and both feet in their seats. It then holds the center pose while you press *Set center & hold* for each joint. Take the duck out before motion tests. Print in PETG; it needs a bed of about 244 × 244 mm, so the A1 mini is too small. CC BY-NC-SA 4.0.
+  - The center is the pose the policies call 0° for every joint: legs straight down with the feet flat and pointing forward, the neck upright, the head level and facing forward, the beak closed. An offset here shows up as a lean in *Default pose*.
 - **Print profiles and remixes:** link to where you publish them (MakerWorld, Printables, your own repository) and state the license. The official design files have no license yet ([LICENSING.md](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/LICENSING.md)), so share a derivative only with the maintainer's permission.
 
 ## Tools

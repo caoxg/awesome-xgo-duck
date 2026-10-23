@@ -71,6 +71,12 @@ Quay 会做这些事：
 ## 3D 打印
 
 - [官方 STL 文件](https://github.com/LuwuDynamics/xgoduck_hardware/tree/HEAD/structure)和[打印说明](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/PRINTING.md)（TPU 脚底、摆放方向、材料）。
+- **标定（舵机中位校准）：**
+  - [xgoduck中位校准托盘](https://makerworld.com.cn/zh/models/3136258-xgoduckzhong-wei-xiao-zhun-tuo-pan)，作者「星猫」，发布在 MakerWorld。
+    - 用法：鸭子卸力后，背朝下放进托盘，头、身体和双脚都对准托座，托盘会把它固定在中位姿态，再逐个关节点「Set center & hold」。做动作测试前先取出来。
+    - 打印：PETG，需要约 244 × 244 mm 的打印平台，A1 mini 放不下。
+    - 许可：CC BY-NC-SA 4.0。
+  - 中位就是策略里每个关节 0° 时的姿态：腿竖直向下，脚放平、脚尖朝前，脖子竖直，头平视前方，嘴闭合。中位偏了，在 Default pose 里就会表现为身体前倾或后仰。
 - **切片配置和改版：** 请链接到你发布的地方（MakerWorld、Printables 或你自己的仓库），并写明许可。官方设计文件目前还没有许可证（见 [LICENSING.md](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/LICENSING.md)），发布衍生设计前请先取得维护者许可。
 
 ## 工具
