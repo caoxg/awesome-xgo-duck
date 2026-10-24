@@ -84,8 +84,14 @@ Quay 会做这些事：
 
   请按页面要求摆放：零件平躺、凹槽朝上，4 层墙、13% 螺旋填充。许可是 MakerWorld 独家许可：改版只能发在 MakerWorld，要注明陆吾智能，不能商用。
 - GitHub 上的[官方 STL 文件](https://github.com/LuwuDynamics/xgoduck_hardware/tree/HEAD/structure)和[打印说明](https://github.com/LuwuDynamics/xgoduck_hardware/blob/HEAD/docs/PRINTING.md)（TPU 脚底、摆放方向、材料）。
+- **配件：**
+  - [xgoduck扩展电路板外壳](https://makerworld.com.cn/zh/models/3136257-xgoduckkuo-zhan-dian-lu-ban-wai-ke)，作者「星猫」，发布在 MakerWorld。
+    - 给扩展电路板加一个保护罩，开关、电源口和通风槽都露在外面。先清掉沉孔里的支撑，再对准电路板的四个孔，用原配螺丝固定。
+    - 打印：PETG，开支撑，外平面朝下，1 盘约 40 分钟，A1 mini 也能打。
+    - 许可：CC BY-NC-SA 4.0。
 - **标定（舵机中位校准）：**
   - [xgoduck中位校准托盘](https://makerworld.com.cn/zh/models/3136258-xgoduckzhong-wei-xiao-zhun-tuo-pan)，作者「星猫」，发布在 MakerWorld。
+    - 要配合上面的扩展电路板外壳使用（同一位作者），先装好外壳。
     - 用法：鸭子卸力后，背朝下放进托盘，头、身体和双脚都对准托座，托盘会把它固定在中位姿态，再逐个关节点「Set center & hold」。做动作测试前先取出来。
     - 打印：PETG，需要约 244 × 244 mm 的打印平台，A1 mini 放不下。
     - 许可：CC BY-NC-SA 4.0。
