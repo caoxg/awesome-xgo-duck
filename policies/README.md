@@ -7,8 +7,17 @@
 
 1. **Check the export on a real duck.** Test it on a stand first, with a hand near *Torque off*.
    **先在真机上验证导出的模型。** 先在支架上测试，手放在「Torque off」附近。
-2. **Put the `.onnx` file somewhere stable**, e.g. a GitHub release of your own repository. Keep the URL unchanged; publish a new version under a new URL.
-   **把 `.onnx` 文件放在稳定的位置**，例如你自己仓库的 GitHub Release。不要改动已发布的网址；新版本请用新网址。
+2. **Put the `.onnx` file somewhere stable.** We suggest doing both:
+   - Attach it to a **GitHub release** of your own repository, and use that link as `url`. Its download count is then public.
+   - Commit the same file to the repository too, and put its **jsDelivr** link in `mirrors` for readers in China. jsDelivr serves files in a repository, not release attachments. Pin the release's tag or a commit, never a branch: `https://cdn.jsdelivr.net/gh/you/your-repo@v1/model.onnx`.
+
+   Keep published URLs unchanged; publish a new version under new URLs.
+
+   **把 `.onnx` 文件放在稳定的位置。** 建议两种方式都用：
+   - 把它作为附件发到你自己仓库的 **GitHub Release**，用这个地址作 `url`，这样下载次数是公开的。
+   - 同时把同一个文件提交进仓库，把它的 **jsDelivr** 地址填进 `mirrors`，方便国内用户下载。jsDelivr 只镜像仓库里的文件，不镜像 Release 附件。地址里写死 Release 的标签或 commit，不要用分支名：`https://cdn.jsdelivr.net/gh/you/your-repo@v1/model.onnx`。
+
+   不要改动已发布的网址；新版本请用新网址。
 3. **Generate the entry:**
    **生成条目：**
    ```bash
@@ -16,8 +25,8 @@
    ```
    It prints the shapes, the metadata, the SHA-256, the size, and an entry to fill in.
    它会打印形状、元数据、SHA-256、大小，以及一条待填写的条目。
-4. **Add the entry** to `index.yaml` (newest last). Run `uv run tools/index.py table`, then `uv run tools/index.py check`, and open a pull request.
-   **把条目加到** `index.yaml` 末尾，运行 `uv run tools/index.py table` 和 `uv run tools/index.py check`，然后提 Pull Request。
+4. **Add the entry** to `index.yaml` (newest last), with your `mirrors` link from step 2; `quay policy inspect` doesn't print one. Run `uv run tools/index.py table`, then `uv run tools/index.py check`, and open a pull request.
+   **把条目加到** `index.yaml` 末尾，并加上第 2 步的 `mirrors` 地址（`quay policy inspect` 不会打印这一项）。运行 `uv run tools/index.py table` 和 `uv run tools/index.py check`，然后提 Pull Request。
 
 ## Fields · 字段
 
