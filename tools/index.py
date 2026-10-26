@@ -4,7 +4,7 @@
 # ///
 """Checks policies/index.yaml and keeps the policy tables in the READMEs in step with it.
 
-    uv run tools/index.py check            # schema, download, SHA-256, size, ONNX shapes and metadata
+    uv run tools/index.py check            # schema, download (mirrors too), SHA-256, size, ONNX shapes and metadata
     uv run tools/index.py check --offline  # schema and README tables only
     uv run tools/index.py table            # rewrite the tables in README.md and README.zh-CN.md
 """
@@ -132,10 +132,24 @@ def check_model(e: dict, data: bytes) -> list[str]:
     return errs
 
 
+def check_mirrors(e: dict) -> list[str]:
+    errs = []
+    for u in e.get("mirrors") or []:
+        try:
+            data = fetch(u, e["size"])
+        except Exception as ex:  # noqa: BLE001
+            errs.append(f"{e['id']}: cannot download mirror {u}: {ex}")
+            continue
+        if (got := hashlib.sha256(data).hexdigest()) != e["sha256"]:
+            errs.append(f"{e['id']}: mirror {u} serves a different file (size {len(data)}, sha256 {got})")
+    return errs
+
+
 def check_files(ix: dict) -> list[str]:
     errs = []
     CACHE.mkdir(parents=True, exist_ok=True)
     for e in ix.get("policies") or []:
+        errs += check_mirrors(e)
         cached = CACHE / f"{e['sha256']}.onnx"
         data = cached.read_bytes() if cached.exists() else None
         if data is None or hashlib.sha256(data).hexdigest() != e["sha256"]:

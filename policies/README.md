@@ -25,8 +25,8 @@
    ```
    It prints the shapes, the metadata, the SHA-256, the size, and an entry to fill in.
    它会打印形状、元数据、SHA-256、大小，以及一条待填写的条目。
-4. **Add the entry** to `index.yaml` (newest last), with your `mirrors` link from step 2; `quay policy inspect` doesn't print one. Run `uv run tools/index.py table`, then `uv run tools/index.py check`, and open a pull request.
-   **把条目加到** `index.yaml` 末尾，并加上第 2 步的 `mirrors` 地址（`quay policy inspect` 不会打印这一项）。运行 `uv run tools/index.py table` 和 `uv run tools/index.py check`，然后提 Pull Request。
+4. **Add the entry** to `index.yaml` (newest last). Make sure it has your `mirrors` link from step 2, with the file's real path in your repository. Run `uv run tools/index.py table`, then `uv run tools/index.py check`, and open a pull request.
+   **把条目加到** `index.yaml` 末尾。确认条目里有第 2 步的 `mirrors` 地址，而且路径是文件在你仓库里的实际位置。运行 `uv run tools/index.py table` 和 `uv run tools/index.py check`，然后提 Pull Request。
 
 ## Fields · 字段
 
@@ -48,7 +48,7 @@
 
 ## What the check verifies · 检查内容
 
-`tools/index.py check` runs on every pull request. It checks the fields, downloads each file, compares the SHA-256 and the size, and loads the model with ONNX:
+`tools/index.py check` runs on every pull request. It checks the fields, downloads each file and each mirror, compares the SHA-256 and the size, and loads the model with ONNX:
 
 - input `[1,61]` and output `[1,14]`;
 - `joint_names` and `observation_names` metadata equal to the runtime's order;
@@ -56,7 +56,7 @@
 
 Quay runs the same checks again before installing, against the stock model on the board.
 
-`tools/index.py check` 在每个 Pull Request 上运行。它会检查字段，下载每个文件，核对 SHA-256 和大小，并用 ONNX 加载模型：
+`tools/index.py check` 在每个 Pull Request 上运行。它会检查字段，下载每个文件和每个镜像，核对 SHA-256 和大小，并用 ONNX 加载模型：
 
 - 输入 `[1,61]`、输出 `[1,14]`；
 - `joint_names`、`observation_names` 元数据和运行时的顺序一致；
